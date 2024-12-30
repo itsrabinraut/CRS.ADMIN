@@ -1,4 +1,5 @@
 ﻿using CRS.ADMIN.SHARED;
+using CRS.ADMIN.SHARED.PaginationManagement;
 using CRS.ADMIN.SHARED.RecommendationManagement_V2;
 using System.Collections.Generic;
 
@@ -15,7 +16,7 @@ namespace CRS.ADMIN.BUSINESS.RecommendationManagement_V2
         List<ClubRecommendationManagementListModelCommon> GetClubRecommendationReqList();
         List<HomePageClubRequestListModelCommon> GetClubRequestListByHomePage(string locationId, string SearchFilter = "");
         List<MainPageClubRequestListModelCommon> GetClubRequestListByMainPage(string locationId, string groupId, string SearchFilter = "");
-        List<SearchPageClubRequestListModelCommon> GetClubRequestListBySearchPage(string locationId, string SearchFilter = "");
+        List<SearchPageClubRequestListModelCommon> GetClubRequestListBySearchPage(string locationId, PaginationFilterCommon objPaginationFilterCommon);
         List<DisplayPageListModelCommon> GetDisplayPageList();
         List<GroupListModelCommon> GetGroupList(string LocationId, string SearchFilter = "");
         List<LocationListModelCommon> GetLocationList();
@@ -28,6 +29,7 @@ namespace CRS.ADMIN.BUSINESS.RecommendationManagement_V2
         List<MainPageHostListForUpdateCommon> MainPageHostRecommendationReqForUpdate(string RecommendationHoldId, string clubId, string displayIdHold, string locationId);
         ManageClubRecommendationRequestCommon MainPageRecommendationReqForUpdate(string clubId, string displayIdHold, string locationId);
         CommonDbResponse ManageGroup(ManageGroupCommon commonModel);
+        CommonDbResponse DeleteGroup(string groupid, string locationid, Common commonRequest);
         CommonDbResponse ManageHomePageRequest(ManageHomePageRequestCommon commonModel);
         CommonDbResponse ManageMainPageRequest(ManageClubRecommendationRequestCommon commonModel);
         CommonDbResponse ManageSearchPageRequest(ManageSearchPageRequestCommon commonModel);

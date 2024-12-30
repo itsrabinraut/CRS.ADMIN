@@ -16,14 +16,52 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
         {
             _DAO = new RepositoryDao();
         }
+        //public List<HostListCommon> GetHostList(string AgentId, PaginationFilterCommon Request)
+        //{
+        //    var response = new List<HostListCommon>();
+        //    string SQL = "EXEC sproc_host_management @Flag='ghl'";
+        //    SQL += ",@AgentId=" + _DAO.FilterString(AgentId);
+        //    SQL += !string.IsNullOrEmpty(Request.SearchFilter) ? ",@SearchFilter=N" + _DAO.FilterString(Request.SearchFilter) : null;
+        //    SQL += ",@Skip=" + Request.Skip;
+        //    SQL += ",@Take=" + Request.Take;
+        //    var dbResponse = _DAO.ExecuteDataTable(SQL);
+        //    if (dbResponse != null)
+        //    {
+        //        foreach (DataRow item in dbResponse.Rows)
+        //        {
+        //            response.Add(new HostListCommon()
+        //            {
+        //                AgentId = _DAO.ParseColumnValue(item, "AgentId").ToString(),
+        //                HostId = _DAO.ParseColumnValue(item, "HostId").ToString(),
+        //                HostName = _DAO.ParseColumnValue(item, "HostName").ToString(),
+        //                Position = _DAO.ParseColumnValue(item, "Position").ToString(),
+        //                Rank = _DAO.ParseColumnValue(item, "Rank").ToString(),
+        //                Age = _DAO.ParseColumnValue(item, "Age").ToString(),
+        //                Status = _DAO.ParseColumnValue(item, "Status").ToString(),
+        //                CreatedDate = !string.IsNullOrEmpty(_DAO.ParseColumnValue(item, "CreatedDate").ToString()) ? DateTime.Parse(_DAO.ParseColumnValue(item, "CreatedDate").ToString()).ToString("yyyy'年'MM'月'dd'日' HH:mm:ss") : _DAO.ParseColumnValue(item, "CreatedDate").ToString(),
+        //                UpdatedDate = !string.IsNullOrEmpty(_DAO.ParseColumnValue(item, "UpdatedDate").ToString()) ? DateTime.Parse(_DAO.ParseColumnValue(item, "UpdatedDate").ToString()).ToString("yyyy'年'MM'月'dd'日' HH:mm:ss") : _DAO.ParseColumnValue(item, "UpdatedDate").ToString(),
+        //                ClubName = _DAO.ParseColumnValue(item, "ClubName").ToString(),
+        //                Ratings = _DAO.ParseColumnValue(item, "Ratings").ToString(),
+        //                TotalVisitors = _DAO.ParseColumnValue(item, "TotalVisitors").ToString(),
+        //                HostImage = _DAO.ParseColumnValue(item, "HostImage").ToString(),
+        //                TotalRecords = Convert.ToInt32(_DAO.ParseColumnValue(item, "TotalRecords").ToString()),
+        //                SNO = Convert.ToInt32(_DAO.ParseColumnValue(item, "SNO").ToString()),
+        //                Height = _DAO.ParseColumnValue(item, "Height").ToString(),
+        //                Address = _DAO.ParseColumnValue(item, "Address").ToString()
+        //            });
+        //        }
+        //    }
+        //    return response;
+        //}
         public List<HostListCommon> GetHostList(string AgentId, PaginationFilterCommon Request)
         {
             var response = new List<HostListCommon>();
-            string SQL = "EXEC sproc_host_management @Flag='ghl'";
+            string SQL = "EXEC sproc_host_management @Flag='ghl_rk'";
             SQL += ",@AgentId=" + _DAO.FilterString(AgentId);
             SQL += !string.IsNullOrEmpty(Request.SearchFilter) ? ",@SearchFilter=N" + _DAO.FilterString(Request.SearchFilter) : null;
             SQL += ",@Skip=" + Request.Skip;
             SQL += ",@Take=" + Request.Take;
+            var i = Request.Skip + 1;
             var dbResponse = _DAO.ExecuteDataTable(SQL);
             if (dbResponse != null)
             {
@@ -40,20 +78,21 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
                         Status = _DAO.ParseColumnValue(item, "Status").ToString(),
                         CreatedDate = !string.IsNullOrEmpty(_DAO.ParseColumnValue(item, "CreatedDate").ToString()) ? DateTime.Parse(_DAO.ParseColumnValue(item, "CreatedDate").ToString()).ToString("yyyy'年'MM'月'dd'日' HH:mm:ss") : _DAO.ParseColumnValue(item, "CreatedDate").ToString(),
                         UpdatedDate = !string.IsNullOrEmpty(_DAO.ParseColumnValue(item, "UpdatedDate").ToString()) ? DateTime.Parse(_DAO.ParseColumnValue(item, "UpdatedDate").ToString()).ToString("yyyy'年'MM'月'dd'日' HH:mm:ss") : _DAO.ParseColumnValue(item, "UpdatedDate").ToString(),
-                        ClubName = _DAO.ParseColumnValue(item, "ClubName").ToString(),
-                        Ratings = _DAO.ParseColumnValue(item, "Ratings").ToString(),
+                        //ClubName = _DAO.ParseColumnValue(item, "ClubName").ToString(),
+                        //Ratings = _DAO.ParseColumnValue(item, "Ratings").ToString(),
                         TotalVisitors = _DAO.ParseColumnValue(item, "TotalVisitors").ToString(),
-                        HostImage = _DAO.ParseColumnValue(item, "HostImage").ToString(),
-                        TotalRecords = Convert.ToInt32(_DAO.ParseColumnValue(item, "TotalRecords").ToString()),
-                        SNO = Convert.ToInt32(_DAO.ParseColumnValue(item, "SNO").ToString()),
+                        HostImage = _DAO.ParseColumnValue(item, "Thumbnail").ToString(),
+                        TotalRecords = Convert.ToInt32(_DAO.ParseColumnValue(item, "RowsTotal").ToString()),
+                        SNO = i,
                         Height = _DAO.ParseColumnValue(item, "Height").ToString(),
                         Address = _DAO.ParseColumnValue(item, "Address").ToString()
+                       
                     });
+                    i++;
                 }
             }
             return response;
         }
-
         public ManageHostCommon GetHostDetail(string AgentId, string HostId)
         {
             var Response = new ManageHostCommon();
@@ -85,6 +124,7 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
                     Address = _DAO.ParseColumnValue(dbResponse, "Address").ToString(),
                     HostNameJapanese = _DAO.ParseColumnValue(dbResponse, "HostNameJapanese").ToString(),
                     HostIntroduction = _DAO.ParseColumnValue(dbResponse, "HostIntroduction").ToString(),
+                    OtherPositionRemark = _DAO.ParseColumnValue(dbResponse, "OtherPosition").ToString(),
                 };
 
                 string SQL2 = "EXEC sproc_host_identity_detail_management @Flag = 'ghid'";
@@ -106,14 +146,17 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
             SQL += ",@HostName=" + _DAO.FilterString(Request.HostName);
             SQL += ",@HostNameJapanese=N" + _DAO.FilterString(Request.HostNameJapanese);
             SQL += ",@Position=N" + _DAO.FilterString(Request.Position);
+            SQL += string.IsNullOrEmpty(Request.OtherPositionRemark) ? ",@OtherPositionRemark=" + _DAO.FilterString(Request.OtherPositionRemark) : ",@OtherPositionRemark=N" + _DAO.FilterString(Request.OtherPositionRemark);
             SQL += !string.IsNullOrEmpty(Request.Rank?.ToString()) ? ",@Rank=" + Request.Rank : "";
-            SQL += ",@DOB=" + _DAO.FilterString(Request.DOB);
+            SQL += ",@DOB=" + "'" + Request.DOB + "'";
             SQL += ",@ConstellationGroup=" + _DAO.FilterString(Request.ConstellationGroup);
             SQL += ",@Height=" + _DAO.FilterString(Request.Height);
             SQL += ",@BloodType=" + _DAO.FilterString(Request.BloodType);
             SQL += ",@PreviousOccupation=" + _DAO.FilterString(Request.PreviousOccupation);
             SQL += ",@LiquorStrength=" + _DAO.FilterString(Request.LiquorStrength);
             //SQL += ",@WebsiteLink=" + _DAO.FilterString(Request.WebsiteLink);
+
+
             SQL += ",@TiktokLink=" + _DAO.FilterString(Request.TiktokLink);
             SQL += ",@TwitterLink=" + _DAO.FilterString(Request.TwitterLink);
             SQL += ",@InstagramLink=" + _DAO.FilterString(Request.InstagramLink);
@@ -123,10 +166,9 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
             SQL += ",@ImagePath=" + _DAO.FilterString(Request.ImagePath);
             SQL += ",@Line=" + _DAO.FilterString(Request.Line);
             SQL += ",@IconImagePath=" + _DAO.FilterString(Request.IconImagePath);
-            SQL += string.IsNullOrEmpty(Request.Address) ? ",@Address=" + _DAO.FilterString(Request.Address) : ",@Address=N" + _DAO.FilterString(Request.Address); 
-            SQL += string.IsNullOrEmpty(Request.HostIntroduction) ? ",@HostIntroduction=" + _DAO.FilterString(Request.HostIntroduction) : ",@HostIntroduction=N" + _DAO.FilterString(Request.HostIntroduction);  
+            SQL += string.IsNullOrEmpty(Request.Address) ? ",@Address=" + _DAO.FilterString(Request.Address) : ",@Address=N" + _DAO.FilterString(Request.Address);
+            SQL += string.IsNullOrEmpty(Request.HostIntroduction) ? ",@HostIntroduction=" + _DAO.FilterString(Request.HostIntroduction) : ",@HostIntroduction=N" + _DAO.FilterString(Request.HostIntroduction);
             Response = _DAO.ParseCommonDbResponse(SQL);
-
             foreach (var item in Request.HostIdentityDataModel)
             {
                 var SQL2 = "EXEC sproc_host_identity_detail_management @Flag = 'mhid'";
@@ -135,7 +177,7 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
                 SQL2 += ",@IdentityType=" + _DAO.FilterString(item.IdentityType);
                 SQL2 += ",@IdentityValue=" + _DAO.FilterString(item.IdentityValue);
                 SQL2 += !string.IsNullOrEmpty(item.IdentityDDLType) ? ",@IdentityDDLType=" + _DAO.FilterString(item.IdentityDDLType) : null;
-                SQL2 += string.IsNullOrEmpty(item.IdentityDescription) ? ",@IdentityDescription=" + _DAO.FilterString(item.IdentityDescription) : ",@IdentityDescription=N" + _DAO.FilterString(item.IdentityDescription); 
+                SQL2 += string.IsNullOrEmpty(item.IdentityDescription) ? ",@IdentityDescription=" + _DAO.FilterString(item.IdentityDescription) : ",@IdentityDescription=N" + _DAO.FilterString(item.IdentityDescription);
                 SQL2 += ",@ActionIP=" + _DAO.FilterString(Request.ActionIP);
                 SQL2 += ",@ActionPlatform=" + _DAO.FilterString(Request.ActionPlatform);
                 _DAO.ParseCommonDbResponse(SQL2);
@@ -217,9 +259,9 @@ namespace CRS.ADMIN.REPOSITORY.HostManagement
         public List<InquiryListCommon> GetInquiryListAsync(string SearchFilter, int StartIndex, int PageSize)
         {
             string SQL = "EXEC sproc_get_customer_enquiry ";
-            SQL += !string.IsNullOrEmpty(SearchFilter) ? "@searchFilter=" + _DAO.FilterString(SearchFilter) + ",": "" ;
+            SQL += !string.IsNullOrEmpty(SearchFilter) ? "@searchFilter=" + _DAO.FilterString(SearchFilter) + "," : "";
             SQL += "@Skip=" + StartIndex;
-            SQL += ",@Take=" +PageSize;
+            SQL += ",@Take=" + PageSize;
 
             var dbResponse = _DAO.ExecuteDataTable(SQL);
             if (dbResponse != null && dbResponse.Rows.Count > 0) return _DAO.DataTableToListObject<InquiryListCommon>(dbResponse).ToList();

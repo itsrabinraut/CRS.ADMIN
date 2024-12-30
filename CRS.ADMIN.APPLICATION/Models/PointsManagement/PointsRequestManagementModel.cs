@@ -1,4 +1,6 @@
-﻿using CRS.ADMIN.SHARED;
+﻿using CRS.ADMIN.APPLICATION.Resources;
+using CRS.ADMIN.SHARED;
+using System.ComponentModel.DataAnnotations;
 
 namespace CRS.ADMIN.APPLICATION.Models.PointsManagement
 {
@@ -16,6 +18,7 @@ namespace CRS.ADMIN.APPLICATION.Models.PointsManagement
     }
     public class ManageClubPointRequestModel
     {
+        public string Id { get; set; }
         public string AgentId { get; set; }
         public string UserId { get; set; }
         public string TxnId { get; set; }

@@ -117,6 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Holder Name" xml:space="preserve">
+    <value>口座名義人名</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="Account Information" xml:space="preserve">
+    <value>アカウント情報</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="Account Number" xml:space="preserve">
+    <value>口座番号</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="Account Symbol" xml:space="preserve">
+    <value>口座記号</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="Account Type" xml:space="preserve">
+    <value>アカウントの種類</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="AccountSymbol" xml:space="preserve">
+    <value>記号番号</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Action" xml:space="preserve">
     <value>アクション</value>
   </data>
@@ -167,6 +191,10 @@
     <value>アドミンプランコミッション額</value>
     <comment>Reservation Ledger</comment>
   </data>
+  <data name="Admin Point Management" xml:space="preserve">
+    <value>アドミン自己ポイント管理</value>
+    <comment>Admin Point Management</comment>
+  </data>
   <data name="Admin Remarks" xml:space="preserve">
     <value>アドミン備考</value>
     <comment>Reservation Ledger</comment>
@@ -210,6 +238,10 @@
   <data name="Affiliate Payments" xml:space="preserve">
     <value>アフィリエイト支払い済</value>
     <comment>Payment Management</comment>
+  </data>
+  <data name="Affiliate Withdraw Logs" xml:space="preserve">
+    <value>引き出しリクエスト</value>
+    <comment>Withdrawal Request</comment>
   </data>
   <data name="AffiliateAutoFilledAddress" xml:space="preserve">
     <value>住所自動入力</value>
@@ -258,6 +290,10 @@
   <data name="AffiliateGender" xml:space="preserve">
     <value>性別</value>
     <comment>AffiliateManagement</comment>
+  </data>
+  <data name="AffiliateInfo" xml:space="preserve">
+    <value>アフィリエイト名</value>
+    <comment>Withdrawal Request</comment>
   </data>
   <data name="AffiliateManagementSupportMsg" xml:space="preserve">
     <value>アフィリエイトの情報、転換された顧客、およびそれらの支払いを管理する</value>
@@ -329,17 +365,41 @@
     <value>四月</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Are you sure you want to block this club" xml:space="preserve">
+    <value>この店舗をブロックしてもよろしいですか？</value>
+    <comment>Club Management</comment>
+  </data>
   <data name="Are you sure you want to change the language" xml:space="preserve">
     <value>言語を変更してもよろしいですか</value>
     <comment>Language Preference</comment>
+  </data>
+  <data name="Are you sure you want to delete this charge category slab?" xml:space="preserve">
+    <value>この料金カテゴリーのスラブを削除してもよろしいですか？</value>
+    <comment>Charge Management</comment>
   </data>
   <data name="Are you sure you want to delete this club" xml:space="preserve">
     <value>こちらの店舗を削除してもよろしいですか？</value>
     <comment>Club Management</comment>
   </data>
+  <data name="Are you sure you want to suspend this charge category slab?" xml:space="preserve">
+    <value>この料金カテゴリーのスラブを一時停止してもよろしいですか？</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="Are you sure you want to unblock this club" xml:space="preserve">
+    <value>この店舗のブロックを解除してもよろしいですか？</value>
+    <comment>Club Management</comment>
+  </data>
+  <data name="Are you sure you want to unsuspend this charge category slab?" xml:space="preserve">
+    <value>この料金カテゴリーのスラブの一時停止を解除してもよろしいですか？</value>
+    <comment>Charge Management</comment>
+  </data>
   <data name="Assign" xml:space="preserve">
     <value>割当</value>
     <comment>Roles &amp; Privileges</comment>
+  </data>
+  <data name="Assign Charge" xml:space="preserve">
+    <value>チャージを割り当てる</value>
+    <comment>Charge Management</comment>
   </data>
   <data name="Assign Commission" xml:space="preserve">
     <value>コミッションの割り当て</value>
@@ -381,6 +441,30 @@
     <value>戻る</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Bank Name" xml:space="preserve">
+    <value>銀行名</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="Bank Type" xml:space="preserve">
+    <value>銀行の種類</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="BankAccountName" xml:space="preserve">
+    <value>口座名義人</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="BankAccountNumber" xml:space="preserve">
+    <value>口座番号</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>銀行名</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="BankType" xml:space="preserve">
+    <value>金融機関の種類</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Banner" xml:space="preserve">
     <value>バナー1</value>
     <comment>HostGallaryManagement</comment>
@@ -392,6 +476,10 @@
   <data name="Basic" xml:space="preserve">
     <value>基本</value>
     <comment>Customer Management</comment>
+  </data>
+  <data name="Basic Club Management" xml:space="preserve">
+    <value>ベーシック店舗管理</value>
+    <comment>Basic Club Management</comment>
   </data>
   <data name="Basic Info" xml:space="preserve">
     <value>基本情報</value>
@@ -420,16 +508,24 @@
     <value>予約済み</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Branch Name" xml:space="preserve">
+    <value>支店名</value>
+    <comment>Account Information</comment>
+  </data>
+  <data name="BranchName" xml:space="preserve">
+    <value>支店名</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Building &amp; Room No" xml:space="preserve">
-    <value>建物と部屋番号</value>
+    <value>建物名・部屋番号</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Business Cerfificate" xml:space="preserve">
-    <value>会社番号証明書</value>
+    <value>社交飲食店の営業許可（風営法)</value>
     <comment>Club Management</comment>
   </data>
   <data name="Business Type" xml:space="preserve">
-    <value>事業の種類</value>
+    <value>法人・個人</value>
     <comment>Club Management</comment>
   </data>
   <data name="BusinessInfo" xml:space="preserve">
@@ -463,12 +559,28 @@
     <comment>CommissionManagement</comment>
   </data>
   <data name="CEO Full Name" xml:space="preserve">
-    <value>CEOフルネーム</value>
+    <value>代表者名</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="CEOFurigana" xml:space="preserve">
     <value>フリガナ</value>
     <comment>ClubManagement</comment>
+  </data>
+  <data name="Charge" xml:space="preserve">
+    <value>チャージ</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="Charge Management" xml:space="preserve">
+    <value>チャージ管理</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="Charge Type" xml:space="preserve">
+    <value>チャージタイプ</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="ChargeAmount" xml:space="preserve">
+    <value>手数料 (¥)</value>
+    <comment>Withdrawal Request</comment>
   </data>
   <data name="Choose Icons" xml:space="preserve">
     <value>アイコン</value>
@@ -483,7 +595,7 @@
     <comment>Gallery Management</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>市</value>
+    <value>市区町村</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Clear All" xml:space="preserve">
@@ -499,7 +611,7 @@
     <comment>Dashboard</comment>
   </data>
   <data name="Club Info" xml:space="preserve">
-    <value>クラブ情報</value>
+    <value>店舗情報</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Club List" xml:space="preserve">
@@ -662,6 +774,10 @@
     <value>担当者名</value>
     <comment>ClubManagement</comment>
   </data>
+  <data name="Contract Information" xml:space="preserve">
+    <value>契約者情報</value>
+    <comment>Club Management</comment>
+  </data>
   <data name="Converted Customers" xml:space="preserve">
     <value>リファーラル</value>
     <comment>Affiliate Management</comment>
@@ -671,7 +787,7 @@
     <comment>Affiliate Management</comment>
   </data>
   <data name="CorporateRegistry" xml:space="preserve">
-    <value>法人登記簿</value>
+    <value>登記簿謄本（履歴事項全部証明書)</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Cover Photo" xml:space="preserve">
@@ -1014,7 +1130,7 @@
     <comment>Recommendation Management</comment>
   </data>
   <data name="Group Name" xml:space="preserve">
-    <value>グループ名</value>
+    <value>所属グループ名</value>
     <comment>Club Management</comment>
   </data>
   <data name="Group Name Placeholder" xml:space="preserve">
@@ -1052,6 +1168,10 @@
   <data name="Holiday" xml:space="preserve">
     <value>店休日</value>
     <comment>ClubManagement</comment>
+  </data>
+  <data name="HoslogBalance" xml:space="preserve">
+    <value>ホスログ残高</value>
+    <comment>Home</comment>
   </data>
   <data name="Host Info" xml:space="preserve">
     <value>ホスト情報</value>
@@ -1117,6 +1237,10 @@
     <value>情報</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Informations regarding charges." xml:space="preserve">
+    <value>チャージに関する情報</value>
+    <comment>Charge Management</comment>
+  </data>
   <data name="Informations regarding commissions type" xml:space="preserve">
     <value>クラブの手数料タイプ情報を管理する。</value>
     <comment>CommissionManagement</comment>
@@ -1173,7 +1297,7 @@
     <comment>ClubManagement</comment>
   </data>
   <data name="KYCDocument" xml:space="preserve">
-    <value>アップロード (本人確認種類)</value>
+    <value>代表者の身分証明書</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="KYCFront" xml:space="preserve">
@@ -1181,7 +1305,7 @@
     <comment>ClubManagement</comment>
   </data>
   <data name="LandlineNumber" xml:space="preserve">
-    <value>固定電話番号</value>
+    <value>電話番号</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Language" xml:space="preserve">
@@ -1306,6 +1430,22 @@
     <value>広告管理</value>
     <comment>Promotional Management</comment>
   </data>
+  <data name="Manage affiliate withdraw logs." xml:space="preserve">
+    <value>支払い引き出し設定を管理します。</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="Manage Charge" xml:space="preserve">
+    <value>チャージを管理する</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="Manage Charge Category" xml:space="preserve">
+    <value>チャージカテゴリを管理する</value>
+    <comment>Charge Management</comment>
+  </data>
+  <data name="Manage charge setting" xml:space="preserve">
+    <value>チャージ設定を管理する。</value>
+    <comment>Charge Management</comment>
+  </data>
   <data name="Manage Club Events" xml:space="preserve">
     <value>クラブイベント管理</value>
     <comment>Club Management</comment>
@@ -1354,6 +1494,14 @@
     <value>通知を管理する</value>
     <comment>Notification</comment>
   </data>
+  <data name="Manage payment withdrawal request." xml:space="preserve">
+    <value>支払い引き出しリクエストを管理します。</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="Manage payment withdrawal setting" xml:space="preserve">
+    <value>支払い引き出し設定を管理します。</value>
+    <comment>Withdraw Setup</comment>
+  </data>
   <data name="Manage Points" xml:space="preserve">
     <value>ポイントを管理する</value>
     <comment>Points Management</comment>
@@ -1389,6 +1537,14 @@
   <data name="Manage user roles and their privileges" xml:space="preserve">
     <value>ロールタイプの権限と機能を管理します。</value>
     <comment>Roles &amp; Privileges</comment>
+  </data>
+  <data name="Manage Withdrawal" xml:space="preserve">
+    <value>引き出し管理</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Manage your club detail information" xml:space="preserve">
+    <value>クラブの詳細情報を管理します。</value>
+    <comment>Basic Club Management</comment>
   </data>
   <data name="Manage your points detail" xml:space="preserve">
     <value>ポイントの詳細を管理してください。</value>
@@ -1436,6 +1592,10 @@
   <data name="March" xml:space="preserve">
     <value>三月</value>
     <comment>Dashboard</comment>
+  </data>
+  <data name="Max Limit Amount" xml:space="preserve">
+    <value>最大限度額（¥）</value>
+    <comment>Withdraw Setup</comment>
   </data>
   <data name="Max Value" xml:space="preserve">
     <value>最大値</value>
@@ -1490,6 +1650,10 @@
     <value>メッセージ</value>
     <comment>SMS</comment>
   </data>
+  <data name="Min Limit Amount" xml:space="preserve">
+    <value>最小限度額（¥）</value>
+    <comment>Withdraw Setup</comment>
+  </data>
   <data name="Min Value" xml:space="preserve">
     <value>最小値</value>
     <comment>Commission Management</comment>
@@ -1503,7 +1667,7 @@
     <comment>Club Management</comment>
   </data>
   <data name="Mobile Number (Easily reachable)" xml:space="preserve">
-    <value>電話番号（連絡の繋がりやすい）</value>
+    <value>電話番号</value>
     <comment>Club Management</comment>
   </data>
   <data name="MobileNumber" xml:space="preserve">
@@ -1517,6 +1681,10 @@
   <data name="Month" xml:space="preserve">
     <value>月</value>
     <comment>Host Management</comment>
+  </data>
+  <data name="MonthAndYear" xml:space="preserve">
+    <value>年月</value>
+    <comment>Withdrawal Request</comment>
   </data>
   <data name="Months" xml:space="preserve">
     <value>月</value>
@@ -1616,6 +1784,10 @@
   <data name="Order" xml:space="preserve">
     <value>予約数</value>
     <comment>Recommendation Management-&gt;Host List</comment>
+  </data>
+  <data name="other holidays" xml:space="preserve">
+    <value>その他</value>
+    <comment>Club Management</comment>
   </data>
   <data name="Others" xml:space="preserve">
     <value>その他</value>
@@ -1738,6 +1910,10 @@
     <value>電話番号</value>
     <comment>Customer Management</comment>
   </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>電話番号</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Plan" xml:space="preserve">
     <value>プラン</value>
     <comment>Payment Management</comment>
@@ -1845,7 +2021,7 @@
     <comment>Inquries</comment>
   </data>
   <data name="Prefecture" xml:space="preserve">
-    <value>県</value>
+    <value>都道府県</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Premium" xml:space="preserve">
@@ -1988,8 +2164,32 @@
     <value>登録日</value>
     <comment>Affiliate Management</comment>
   </data>
+  <data name="RequestedAmount" xml:space="preserve">
+    <value>引き出し金額 (¥)</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="RequestedDate" xml:space="preserve">
+    <value>引き出し依頼日</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="RequestId" xml:space="preserve">
     <value>リクエストID</value>
+  </data>
+  <data name="Requesting Date (From)" xml:space="preserve">
+    <value>リクエスト日（開始）</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Requesting Date (To)" xml:space="preserve">
+    <value>リクエスト日（終了）</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Requesting Day (From)" xml:space="preserve">
+    <value>リクエスト日（開始）</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Requesting Day (To)" xml:space="preserve">
+    <value>リクエスト日（終了）</value>
+    <comment>Withdraw Setup</comment>
   </data>
   <data name="Requests" xml:space="preserve">
     <value>リクエスト</value>
@@ -2154,6 +2354,10 @@
     <value>九月</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Service tax" xml:space="preserve">
+    <value>サービス料金</value>
+    <comment>Club Management</comment>
+  </data>
   <data name="Set Shuffling Time" xml:space="preserve">
     <value>シャッフル時間設定</value>
     <comment>Recommendation Management-&gt;Shuffling time</comment>
@@ -2249,7 +2453,7 @@
     <comment>ClubManagement</comment>
   </data>
   <data name="Street" xml:space="preserve">
-    <value>町</value>
+    <value>町名・番地</value>
     <comment>ClubManagement</comment>
   </data>
   <data name="Strike Out" xml:space="preserve">
@@ -2435,6 +2639,10 @@
     <value>合計プラン金額</value>
     <comment>Payment Management</comment>
   </data>
+  <data name="TotalRequestedAmount" xml:space="preserve">
+    <value>総引き出し金額 (¥)</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Transaction Date" xml:space="preserve">
     <value>取引日時</value>
     <comment>Points Management</comment>
@@ -2458,6 +2666,10 @@
   <data name="Transfer Type" xml:space="preserve">
     <value>転送タイプ</value>
     <comment>Points Management</comment>
+  </data>
+  <data name="TransferAmount" xml:space="preserve">
+    <value>振込金額 (¥)</value>
+    <comment>Withdrawal Request</comment>
   </data>
   <data name="Tuesday" xml:space="preserve">
     <value>火</value>
@@ -2564,6 +2776,26 @@
     <value>おかえり</value>
     <comment>Dashboard</comment>
   </data>
+  <data name="Withdraw Setup" xml:space="preserve">
+    <value>出金設定</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Withdraw-able Date" xml:space="preserve">
+    <value>引き出し可能日</value>
+    <comment>Withdraw Setup</comment>
+  </data>
+  <data name="Withdrawal Request" xml:space="preserve">
+    <value>引き出しリクエスト</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="WithdrawalRequests" xml:space="preserve">
+    <value>引き出しリクエスト</value>
+    <comment>Withdrawal Request</comment>
+  </data>
+  <data name="WithdrawDay" xml:space="preserve">
+    <value>引き出し日</value>
+    <comment>Withdrawal Request</comment>
+  </data>
   <data name="Working Hours (From)" xml:space="preserve">
     <value>開店時間</value>
     <comment>ClubManagement</comment>
@@ -2579,5 +2811,9 @@
   <data name="Yes" xml:space="preserve">
     <value>確認</value>
     <comment>Customer Management</comment>
+  </data>
+  <data name="Group Management" xml:space="preserve">
+    <value>グループ管理</value>
+    <comment>Group Management</comment>
   </data>
 </root>
